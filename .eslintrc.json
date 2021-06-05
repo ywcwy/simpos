@@ -13,8 +13,19 @@
         "ecmaVersion": 12
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "typescript"
     ],
     "rules": {
+        //ESLint 原生的規則（它要求必須使用 === 或 !==，禁止使用 == 或 !=，與 null 比較時除外）
+        "eqeqeq": [
+            "error", // 此值是 off、warn 或 error 中的一個，表示關閉、警告和報錯。
+            "always",
+            {
+                "null": "ignore"
+            }
+        ],
+        // 類別和介面的命名必須遵守帕斯卡命名法，比如 PersianCat
+        "typescript/class-name-casing": "error"
     }
 }

@@ -2,10 +2,11 @@
   "name": "simpos",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "src/index.ts",
   "scripts": {
-    "start": "node app.js",
-    "dev": "nodemon app.js",
+    "eslint": "eslint src --ext .ts",
+    "start": "node --experimental-modules src/index.ts",
+    "dev": "nodemon  --exec \"npm run eslint && node src/index.ts\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,9 +19,14 @@
     "method-override": "^3.0.0"
   },
   "devDependencies": {
+    "@types/express": "^4.17.12",
+    "@types/node": "^15.12.1",
     "@typescript-eslint/eslint-plugin": "^4.26.0",
     "@typescript-eslint/parser": "^4.26.0",
-    "eslint": "^7.27.0",
-    "typescript": "^4.3.2"
+    "eslint": "^7.28.0",
+    "eslint-plugin-typescript": "^0.14.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.3.2",
+    "typescript-eslint-parser": "^22.0.0"
   }
 }
